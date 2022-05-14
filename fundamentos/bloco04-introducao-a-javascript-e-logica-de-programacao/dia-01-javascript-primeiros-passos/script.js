@@ -132,3 +132,65 @@ if (num1 % 2 == 0 || num2 % 2 == 0 || num3 % 2 == 0){
 else {
     console.log("false");
 }
+
+/// exercicio extra ///
+
+let numbers = [5, 9, 2, 77, 11, 97, 46, 18, 28, 29, 37]
+
+for (i = 0; i < numbers.length - 1; i += 1){
+    for (j = i + 1; j < numbers.length; j += 1){
+        if (numbers[i] > numbers[j]){
+            let aux = numbers[i];
+            numbers[i] = numbers[j];
+            numbers[j] = aux;
+        }
+    }
+}
+console.log(numbers);
+
+/// exercício 10 ///
+
+const custo = 50;
+const preco = 200;
+
+let lucroUnitario = preco - (1.2 * custo);
+let lucroTotal = 1000 * lucroUnitario;
+
+console.log(lucroUnitario);
+console.log(lucroTotal);
+
+/// exercicio 11 ///
+
+let salarioBruto = [3000.00, 1500.10, 2100.50, 5300.00, 4200.90];
+let salarioLiquido = [];
+
+for (i = 0; i < salarioBruto.length; i ++) {
+    if (salarioBruto[i] < 1556.94){
+        salarioLiquido.push(salarioBruto[i] * 0.92);
+    }
+    else if (salarioBruto[i] >= 1556.94 && salarioBruto[i] < 2594.92){
+        salarioLiquido.push(salarioBruto[i] * 0.91);
+    }
+    else if (salarioBruto[i] >= 2594.92 && salarioBruto[i] < 5189.82){
+        salarioLiquido.push(salarioBruto[i] * 0.89);
+    }
+    else if (salarioBruto[i] > 5189.82){
+        salarioLiquido.push(salarioBruto[i] - 570.88);
+    }
+}
+for (i = 0; i < salarioLiquido.length; i ++) {
+    if (salarioLiquido[i] >= 1903.99 && salarioLiquido[i] < 2826.66 ){
+        salarioLiquido[i] = salarioLiquido[i] - (salarioLiquido[i] * 0.075 - 142.8);
+    }
+    else if (salarioLiquido[i] >= 2826.66 && salarioLiquido[i] < 3751.06 ){
+        salarioLiquido[i] = salarioLiquido[i] - (salarioLiquido[i] * 0.15 - 354.8);
+    }
+    else if (salarioLiquido[i] >= 3751.06 && salarioLiquido[i] < 4664.68 ){
+        salarioLiquido[i] = salarioLiquido[i] - (salarioLiquido[i] * 0.225 - 636.13);
+    }
+    else if (salarioBruto[i] > 4664.68){
+        salarioLiquido[i] = salarioLiquido[i] - (salarioLiquido[i] * 0.275 - 869.36);
+    }
+}
+console.log(salarioBruto);
+console.log(salarioLiquido);
